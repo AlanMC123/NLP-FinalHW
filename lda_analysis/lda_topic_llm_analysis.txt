@@ -1,0 +1,32 @@
+Topic 0 
+european, eu, uk, parliament, act, law, union, prime	
+脫歐立法與主權
+這是最清晰的政治主題。關鍵詞高度集中在英國脫歐的法律與程序層面，強調「議會」、「法案」與「歐盟」，反映了當時關於脫歐協議與主權的激烈辯論。
+
+Topic 1	tax, economy, labour, jobs, economic, money	
+宏觀經濟與就業
+典型的經濟議題，詞彙聚焦於國家層面的經濟表現，包括「稅收」、「經濟」與「就業」。這通常涉及財政預算案與國家經濟增長的討論。
+
+Topic 2	
+tax, housing, business, police, pay, sector	
+國內民生與商業環境
+相較於 Topic 1 的宏觀經濟，此主題更偏向具體的國內政策執行。涵蓋了「住房」、「商業」環境以及公部門的「薪資」，反映了對國內生活成本與商業運作的關注。
+
+Topic 3	
+tax, women, police, services, national	
+社會議題與婦女權益
+這是一個具有社會關懷色彩的主題。出現了獨特的關鍵詞 「婦女」，配合「服務」與「警察」，可能涉及性別薪資差距、婦女安全或特定的社會福利服務辯論。
+
+Topic 4	
+parliament, amendments, police, legislation, law, home	
+立法程序與內政
+此主題混合了立法過程與內政事務，「修正案」與「立法」顯示這是關於法案細節的修訂；「警察」與「內政」則明確指向內政部管轄的治安法案。
+Topic 5	
+energy, scotland, european, union, vote, scottish	
+能源與區域事務 (蘇格蘭)
+這是一個帶有強烈地緣政治色彩的主題。「能源」政策與「蘇格蘭」緊密連結，反映了蘇格蘭作為能源重鎮（石油/風能）在歐盟與英國關係中的特殊地位。
+
+Topic 6	
+health, care, nhs, children, schools, education	
+公共服務：醫療與教育
+這是整合度最高的主題之一，它成功將兩大民生支柱——「醫療 」與「教育」合併。這兩者通常是政府預算中最大的公共服務開支，也是選民最關心的福利議題。

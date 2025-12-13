@@ -272,7 +272,7 @@ if __name__ == '__main__':
             party_col='motion_party', 
             prefix='lda',  
             result_folder=result_folder,
-            num_topics=6
+            num_topics=7
         )
         
         print("\n程序完成！")
