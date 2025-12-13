@@ -3,7 +3,8 @@ european, eu, uk, parliament, act, law, union, prime
 脫歐立法與主權
 這是最清晰的政治主題。關鍵詞高度集中在英國脫歐的法律與程序層面，強調「議會」、「法案」與「歐盟」，反映了當時關於脫歐協議與主權的激烈辯論。
 
-Topic 1	tax, economy, labour, jobs, economic, money	
+Topic 1	
+tax, economy, labour, jobs, economic, money	
 宏觀經濟與就業
 典型的經濟議題，詞彙聚焦於國家層面的經濟表現，包括「稅收」、「經濟」與「就業」。這通常涉及財政預算案與國家經濟增長的討論。
 
