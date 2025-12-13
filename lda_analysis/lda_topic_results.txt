@@ -1,0 +1,6 @@
+主题 0: 0.004*"european" + 0.003*"uk" + 0.003*"parliament" + 0.003*"eu" + 0.003*"country" + 0.003*"act" + 0.003*"governments" + 0.002*"law" + 0.002*"today" + 0.002*"vote"
+主题 1: 0.006*"tax" + 0.003*"economy" + 0.003*"labour" + 0.003*"constituency" + 0.003*"uk" + 0.003*"country" + 0.003*"jobs" + 0.003*"governments" + 0.003*"economic" + 0.002*"growth"
+主题 2: 0.006*"tax" + 0.004*"labour" + 0.003*"governments" + 0.003*"country" + 0.003*"business" + 0.003*"housing" + 0.003*"pay" + 0.003*"police" + 0.003*"sector" + 0.003*"money"
+主题 3: 0.005*"health" + 0.004*"nhs" + 0.004*"care" + 0.003*"services" + 0.003*"schools" + 0.003*"tax" + 0.003*"education" + 0.003*"country" + 0.003*"labour" + 0.003*"women"
+主题 4: 0.003*"parliament" + 0.003*"amendments" + 0.003*"police" + 0.003*"hope" + 0.003*"legislation" + 0.003*"european" + 0.002*"matter" + 0.002*"law" + 0.002*"question" + 0.002*"home"
+主题 5: 0.004*"labour" + 0.004*"european" + 0.004*"vote" + 0.003*"union" + 0.003*"energy" + 0.003*"party" + 0.003*"parliament" + 0.003*"tax" + 0.003*"scotland" + 0.003*"country"
