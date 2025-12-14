@@ -36,7 +36,7 @@ except Exception:
 # ==========================================
 # 辅助函数
 # ==========================================
-stopwords_path = 'stopwords.txt'
+stopwords_path = 'stopwords/lda_stopwords.txt'
 custom_stopwords = []
 if os.path.exists(stopwords_path):
     with open(stopwords_path, 'r', encoding='utf-8') as f:
