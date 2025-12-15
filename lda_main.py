@@ -110,7 +110,7 @@ def extract_dominant_topic_safe(topic_dist):
 # ==========================================
 # 核心训练函数 (已修复)
 # ==========================================
-def train_combined_lda_and_analyze(data, combined_text_col, party_col, prefix, result_folder, num_topics=6):
+def train_combined_lda_and_analyze(data, combined_text_col, party_col, year_col, prefix, result_folder, num_topics=6):
     print(f"\n{'='*50}")
     print(f"正在对 {prefix} 语料库训练 LDA 模型...")
     
@@ -188,7 +188,7 @@ def train_combined_lda_and_analyze(data, combined_text_col, party_col, prefix, r
     # ==========================================
     # 可视化
     # ==========================================
-    print(f"\n>>> 开始 {party_col} 分布分析 <<<")
+    print(f">>> 开始 {party_col} 分布分析 <<<")
     
     analysis_data = data[
         data[party_col].notna() & 
@@ -208,7 +208,7 @@ def train_combined_lda_and_analyze(data, combined_text_col, party_col, prefix, r
             plt.xlabel('党派')
             plt.ylabel('比例')
             plt.legend(title='主题', loc='upper right', bbox_to_anchor=(1.15, 1))
-            plt.xticks(rotation=45)
+            plt.xticks(rotation=45, ha='right')
             plt.tight_layout()
             plt.savefig(f'{result_folder}/{prefix}_party_topic_distribution.png')
             plt.close()
@@ -228,8 +228,92 @@ def train_combined_lda_and_analyze(data, combined_text_col, party_col, prefix, r
             print(f"❌ 绘图失败: {e}")
             import traceback
             traceback.print_exc()
+    
+    # 年份主题分析
+    print(f"\n>>> 开始 {year_col} 分布分析 <<<")
+    
+    year_analysis_data = data[
+        data[year_col].notna() & 
+        (data[f'{prefix}_dominant_topic'] != -1) 
+    ].copy()
+    
+    print(f"参与年份分析的有效数据行数: {len(year_analysis_data)}")
+    
+    if not year_analysis_data.empty:
+        try:
+            # 计算每年的主题分布
+            year_topic_counts = year_analysis_data.groupby(year_col)[f'{prefix}_dominant_topic'].value_counts().unstack(fill_value=0)
+            year_topic_dist = year_analysis_data.groupby(year_col)[f'{prefix}_dominant_topic'].value_counts(normalize=True).unstack(fill_value=0)
+            
+            # 找出每年的最大主题
+            annual_max_topics = year_topic_counts.idxmax(axis=1)
+            annual_max_proportions = year_topic_counts.max(axis=1) / year_topic_counts.sum(axis=1)
+            
+            # 保存每年最大主题到文件
+            year_max_topic_file = os.path.join(result_folder, f'{prefix}_annual_max_topics.txt')
+            with open(year_max_topic_file, 'w', encoding='utf-8') as f:
+                f.write("年度最大主题分析\n")
+                f.write("=" * 30 + "\n")
+                f.write(f"{'年份':<8} {'最大主题':<10} {'主题比例':<10} {'总文档数':<10}\n")
+                f.write("-" * 40 + "\n")
+                
+                for year in sorted(annual_max_topics.index):
+                    max_topic = annual_max_topics[year]
+                    proportion = annual_max_proportions[year]
+                    total_docs = year_topic_counts.loc[year].sum()
+                    f.write(f"{year:<8} {max_topic:<10} {proportion:.2%}{'':<10} {total_docs:<10}\n")
+            
+            print("✅ 年度最大主题分析已保存")
+            
+            # 可视化年份-主题分布
+            plt.figure(figsize=(14, 8))
+            year_topic_dist.plot(kind='bar', stacked=True, colormap='viridis', ax=plt.gca())
+            plt.title(f'每年主题分布')
+            plt.xlabel('年份')
+            plt.ylabel('比例')
+            plt.legend(title='主题', loc='upper right', bbox_to_anchor=(1.15, 1))
+            plt.xticks(rotation=45, ha='right')
+            plt.tight_layout()
+            plt.savefig(f'{result_folder}/{prefix}_year_topic_distribution.png')
+            plt.close()
+            print("✅ 年份-主题分布柱状图已保存")
+            
+            plt.figure(figsize=(14, 10))
+            sns.heatmap(year_topic_dist, annot=True, cmap='YlGnBu', fmt='.2f')
+            plt.title(f'主题-年份分布热力图')
+            plt.xlabel('主题')
+            plt.ylabel('年份')
+            plt.tight_layout()
+            plt.savefig(f'{result_folder}/{prefix}_topic_year_heatmap.png')
+            plt.close()
+            print("✅ 主题-年份分布热力图已保存")
+            
+            # 可视化每年最大主题
+            plt.figure(figsize=(12, 6))
+            years = sorted(annual_max_topics.index)
+            max_topics = [annual_max_topics[year] for year in years]
+            max_props = [annual_max_proportions[year] for year in years]
+            
+            plt.bar(years, max_props, color='skyblue')
+            for i, (year, topic) in enumerate(zip(years, max_topics)):
+                plt.text(year, max_props[i] + 0.01, f'T{topic}', ha='center', fontsize=9)
+            
+            plt.title('每年最大主题比例')
+            plt.xlabel('年份')
+            plt.ylabel('最大主题比例')
+            plt.ylim(0, 1)
+            plt.xticks(years, rotation=45)
+            plt.grid(axis='y', linestyle='--', alpha=0.7)
+            plt.tight_layout()
+            plt.savefig(f'{result_folder}/{prefix}_annual_max_topic_trend.png')
+            plt.close()
+            print("✅ 年度最大主题趋势图已保存")
+        except Exception as e:
+            print(f"❌ 年份分析失败: {e}")
+            import traceback
+            traceback.print_exc()
     else:
-        print("没有足够的数据用于绘图。")
+        print("没有足够的数据用于年份分析。")
 
     print("\n正在进行词频统计...")
     plot_word_frequency(data, party_col, combined_text_col, prefix, result_folder)
@@ -261,6 +345,10 @@ if __name__ == '__main__':
         combined = [m + s for m, s in zip(df['processed_motion'], df['processed_speech'])]
         df['combined_text'] = combined
         
+        # 从 debate_id 提取年份
+        df['year'] = df['debate_id'].astype(str).str[:4].astype(int)
+        print(f"年份范围: {df['year'].min()} - {df['year'].max()}")
+        
         # 过滤
         df_combined = df[df['combined_text'].apply(len) > 0].copy()
         print(f"过滤后数据量: {len(df_combined)}")
@@ -270,6 +358,7 @@ if __name__ == '__main__':
             df_combined, 
             combined_text_col='combined_text', 
             party_col='motion_party', 
+            year_col='year',  
             prefix='lda',  
             result_folder=result_folder,
             num_topics=7
