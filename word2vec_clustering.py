@@ -14,7 +14,10 @@ from sklearn.cluster import KMeans
 from sklearn.manifold import TSNE
 from sklearn.preprocessing import normalize
 from sklearn.feature_extraction.text import TfidfVectorizer 
-from nltk.stem import SnowballStemmer
+from nltk.stem import WordNetLemmatizer
+from nltk import pos_tag
+from nltk.corpus import wordnet
+from nltk.tokenize import word_tokenize
 
 # 并行处理库
 from joblib import Parallel, delayed
@@ -39,6 +42,21 @@ print(f"★ 已设定使用 {NUM_CORES} 个线程进行并行加速")
 # 辅助函数
 # ==========================================
 
+def get_wordnet_pos(tag):
+    """
+    将NLTK的POS标签转换为WordNet的POS标签
+    """
+    if tag.startswith('J'):
+        return wordnet.ADJ
+    elif tag.startswith('V'):
+        return wordnet.VERB
+    elif tag.startswith('N'):
+        return wordnet.NOUN
+    elif tag.startswith('R'):
+        return wordnet.ADV
+    else:
+        return wordnet.NOUN  # 默认使用名词
+
 def load_stopwords(filepath='stopwords/w2v_stopwords.txt'):
     stopwords = set()
     if os.path.exists(filepath):
@@ -51,10 +69,10 @@ def load_stopwords(filepath='stopwords/w2v_stopwords.txt'):
             print(f"加载停用词失败: {e}")
     return stopwords
 
-# ★ 修改：添加 use_stemming 参数并实现词干化逻辑
-def preprocess_wrapper(text, stopwords_set=None, use_stemming=True):
+# ★ 修改：添加 use_lemmatization 参数并实现词形还原逻辑
+def preprocess_wrapper(text, stopwords_set=None, use_lemmatization=True):
     """
-    预处理流程：分词 -> 去停用词 -> 词干化
+    预处理流程：分词 -> 去停用词 -> 词形还原
     """
     if pd.isna(text):
         return []
@@ -66,23 +84,24 @@ def preprocess_wrapper(text, stopwords_set=None, use_stemming=True):
     if stopwords_set:
         tokens = [t for t in tokens if t not in stopwords_set]
     
-    # 3. 最后对剩下的词进行词干化
-    if use_stemming:
+    # 3. 最后对剩下的词进行词形还原
+    if use_lemmatization:
         # 在函数内初始化，防止多进程冲突
-        stemmer = SnowballStemmer("english")
-        tokens = [stemmer.stem(t) for t in tokens]
+        lemmatizer = WordNetLemmatizer()
+        # 简化词形还原（不使用POS标签，避免多进程序列化问题）
+        tokens = [lemmatizer.lemmatize(t) for t in tokens]
         
     return tokens
 
 def get_cluster_keywords(texts, stop_words_list=None, top_n=5):
     """
     提取聚类关键词 (TF-IDF)
-    自动处理停用词的词干化，以匹配输入文本
+    自动处理停用词的词形还原，以匹配输入文本
     """
     if not texts: return "N/A"
     
-    # 初始化词干提取器
-    stemmer = SnowballStemmer("english")
+    # 初始化词形还原器
+    lemmatizer = WordNetLemmatizer()
     
     # 1. 准备基础停用词
     from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
@@ -93,13 +112,17 @@ def get_cluster_keywords(texts, stop_words_list=None, top_n=5):
     if stop_words_list:
         combined_stopwords.extend(list(stop_words_list))
         
-    # 3. ★ 关键步骤：对停用词表也进行词干化
-    # 这样停用词表里就同时有了 'government' 和 'govern'
-    # 无论输入文本是原始的还是词干化的，都能被过滤
-    stemmed_stopwords = [stemmer.stem(w) for w in combined_stopwords]
+    # 3. ★ 关键步骤：对停用词表也进行词形还原
+    # 这样停用词表里就同时有了 'government' 和 'government'（词形还原结果相同）
+    # 无论输入文本是原始的还是词形还原的，都能被过滤
+    lemmatized_stopwords = []
+    for w in combined_stopwords:
+        # 简单词形还原（不使用POS标签，因为停用词主要是常见词）
+        lemma = lemmatizer.lemmatize(w)
+        lemmatized_stopwords.append(lemma)
     
-    # 合并 原词 + 词干词 (去重)
-    final_stop_words = list(set(combined_stopwords + stemmed_stopwords))
+    # 合并 原词 + 词形还原词 (去重)
+    final_stop_words = list(set(combined_stopwords + lemmatized_stopwords))
 
     # 4. 运行 TF-IDF
     tfidf = TfidfVectorizer(stop_words=final_stop_words, max_features=1000)
@@ -183,7 +206,7 @@ def find_optimal_k_elbow(doc_vectors, max_k=15, save_dir='clustering_analysis_8'
     
     return best_k
 
-def main():
+def main(k):
     start_total = time()
 
     # ==========================================
@@ -210,12 +233,12 @@ def main():
     # 加载停用词 (建议把 'government', 'people', 'house' 等高频政治词加入这个txt文件)
     stopwords_set = load_stopwords('stopwords/w2v_stopwords.txt')
 
-    # 设定是否开启词干化
-    USE_STEMMING = True 
+    # 设定是否开启词形还原
+    USE_LEMMATIZATION = True 
     
-    # 并行处理：先去停用词，再 Stem
+    # 并行处理：先去停用词，再词形还原
     tokenized_docs = Parallel(n_jobs=NUM_CORES)(
-        delayed(preprocess_wrapper)(text, stopwords_set, USE_STEMMING) for text in tqdm(unique_texts, desc="Tokenizing")
+        delayed(preprocess_wrapper)(text, stopwords_set, USE_LEMMATIZATION) for text in tqdm(unique_texts, desc="Tokenizing")
     )
     
     valid_docs = []
@@ -231,7 +254,7 @@ def main():
     # ==========================================
     # 3. Word2Vec 模型加载或训练
     # ==========================================
-    save_dir = 'clustering_analysis_8'
+    save_dir = f'clustering_analysis_{k}'
     os.makedirs(save_dir, exist_ok=True)
     # 修改模型文件名以区分是否使用了词干化
     model_name = 'word2vec.model'
@@ -283,8 +306,8 @@ def main():
     # ==========================================
     # 5. 肘部法与聚类
     # ==========================================
-    # best_k = find_optimal_k_elbow(doc_vectors_norm, max_k=15, save_dir=save_dir)
-    best_k = 8
+    best_k = find_optimal_k_elbow(doc_vectors_norm, max_k=15, save_dir=save_dir)
+    best_k = k
 
     print(f"\n正在使用最佳 K={best_k} 运行最终聚类...")
     kmeans = KMeans(n_clusters=best_k, random_state=2026, n_init=10)
@@ -301,7 +324,8 @@ def main():
         'x': vectors_2d[:, 0],
         'y': vectors_2d[:, 1],
         'KMeans聚类标签': kmeans_labels,
-        'Raw_Text': unique_texts
+        'Raw_Text': unique_texts,
+        'Processed_Text': corpus_as_strings  # 保存经过词形还原后的文本
     })
 
     # ==========================================
@@ -312,15 +336,11 @@ def main():
     stopwords_list = list(stopwords_set) if stopwords_set else []
 
     for c in range(best_k):
-        # 注意：这里提取关键词时，我们用的是处理后的词干 (corpus_as_strings)
-        # 还是原始文本 (unique_texts)?
-        # 推荐：为了提取准确的关键词，通常用 Raw Text。
-        # 但如果想看模型到底学到了什么，可以用处理后的文本。
-        # 此处代码使用原始文本 Raw_Text，因此提取出的关键词是完整单词，可读性更好。
-        texts = plot_df[plot_df['KMeans聚类标签'] == c]['Raw_Text'].tolist()
+        # 使用经过词形还原后的文本提取关键词
+        texts = plot_df[plot_df['KMeans聚类标签'] == c]['Processed_Text'].tolist()
         keywords = get_cluster_keywords(texts, stop_words_list=stopwords_list)
         cluster_keywords[c] = keywords
-        print(f"  簇{c}: [{keywords}]")
+        print(f"  C{c}: [{keywords}]")
 
     print("\n正在绘图...")
     plt.figure(figsize=(16, 12)) 
@@ -334,11 +354,11 @@ def main():
                  ha='center', va='center', fontsize=11, weight='bold', 
                  bbox=dict(facecolor='white', alpha=0.8, boxstyle='round,pad=0.5'))
 
-    plt.title(f'Word2Vec (TF-IDF加权) 聚类可视化)', fontsize=18)
-    save_filename = 'word2vec_stemmed_tfidf_figure.png' if USE_STEMMING else 'word2vec_tfidf_figure.png'
+    plt.title(f'Word2Vec (TF-IDF加权) 聚类可视化', fontsize=18)
+    save_filename = 'word2vec_lemmatized_tfidf_figure.png' if USE_LEMMATIZATION else 'word2vec_tfidf_figure.png'
     plt.savefig(os.path.join(save_dir, save_filename), dpi=300)
     print(f"结果已保存。总耗时: {time() - start_total:.2f} 秒")
 
 if __name__ == '__main__':
     multiprocessing.freeze_support()
-    main()
+    main(10)

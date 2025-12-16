@@ -190,9 +190,10 @@ def train_combined_lda_and_analyze(data, combined_text_col, party_col, year_col,
         id2word=dictionary,
         num_topics=num_topics,
         random_state=42,
-        chunksize=2000,
-        passes=5,
-        alpha='symmetric',
+        chunksize=1500,
+        passes=15,
+        eta=0.001,
+        alpha='asymmetric',
         per_word_topics=True,
         workers=NUM_CORES
     )

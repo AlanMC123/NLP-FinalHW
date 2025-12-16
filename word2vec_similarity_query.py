@@ -29,7 +29,7 @@ def get_similar_words(model, word, topn=20):
         return []
 
 # 主函数
-def main():
+def main(topn):
     # 模型路径
     model_path = 'w2v_models/word2vec.model'
     
@@ -45,7 +45,7 @@ def main():
                 break
             
             # 查询相似单词
-            similar_words = get_similar_words(model, word)
+            similar_words = get_similar_words(model, word, topn=topn)
             
             if similar_words:
                 print(f"\n与 '{word}' 最相似的 {len(similar_words)} 个单词：")
@@ -54,4 +54,4 @@ def main():
             print()
 
 if __name__ == '__main__':
-    main()
+    main(30)
