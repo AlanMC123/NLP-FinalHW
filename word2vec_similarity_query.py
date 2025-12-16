@@ -31,7 +31,7 @@ def get_similar_words(model, word, topn=20):
 # 主函数
 def main():
     # 模型路径
-    model_path = 'clustering_analysis/word2vec.model'
+    model_path = 'w2v_models/word2vec.model'
     
     # 加载模型
     model = load_word2vec_model(model_path)

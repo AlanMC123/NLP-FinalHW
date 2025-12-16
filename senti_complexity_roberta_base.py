@@ -147,9 +147,9 @@ def generate_plots(df, metric_col, output_subfolder, metric_name="Sentiment"):
         sns.scatterplot(data=sub_df, x=metric_col, y='complexity', color=color, s=120, alpha=0.8)
         plt.axvline(0, color='red', linestyle='--')
         
-        plt.title(f'Speaker Style: {party_name}', fontsize=18)
-        plt.xlabel(f'{metric_name} Polarity', fontsize=14)
-        plt.ylabel('Complexity (Grade Level)', fontsize=14)
+        plt.title(f'发言人风格: {party_name}', fontsize=18)
+        plt.xlabel(f'{metric_name} 情感极性', fontsize=14)
+        plt.ylabel('复杂度', fontsize=14)
         
         # 统一坐标轴范围
         plt.xlim(-global_limit, global_limit)
@@ -170,8 +170,9 @@ def generate_plots(df, metric_col, output_subfolder, metric_name="Sentiment"):
         plt.text(row[metric_col], row['complexity'], row['party'], ha='center', va='center', weight='bold')
     
     plt.axvline(0, color='red', linestyle='--')
-    plt.title(f'Party Analysis ({metric_name})', fontsize=18)
-    plt.xlabel(f'{metric_name} Polarity', fontsize=14)
+    plt.title(f'政党分析 ({metric_name})', fontsize=18)
+    plt.xlabel(f'{metric_name} 情感极性', fontsize=14)
+    plt.ylabel('复杂度', fontsize=14)
     
     # 限制横轴范围 (根据原始代码要求)
     plt.xlim(-1, 1)
@@ -199,12 +200,12 @@ def generate_plots(df, metric_col, output_subfolder, metric_name="Sentiment"):
     )
     
     plt.axvline(0, color='red', linestyle='--', alpha=0.5)
-    plt.title(f'All Speakers: {metric_name} vs Complexity', fontsize=20)
-    plt.xlabel(f'{metric_name} Polarity', fontsize=15)
-    plt.ylabel('Complexity (Grade Level)', fontsize=15)
+    plt.title(f'所有发言人: {metric_name} 与复杂度关系', fontsize=20)
+    plt.xlabel(f'{metric_name} 情感极性', fontsize=15)
+    plt.ylabel('复杂度', fontsize=15)
     
     # 放置图例在右侧外
-    plt.legend(bbox_to_anchor=(1.01, 1), loc='upper left', borderaxespad=0., title='Party')
+    plt.legend(bbox_to_anchor=(1.01, 1), loc='upper left', borderaxespad=0., title='政党')
     
     plt.tight_layout()
     plt.savefig(os.path.join(save_path_root, 'all_speakers_scatter.png'), dpi=300)
@@ -265,7 +266,7 @@ def main():
             df=df, 
             metric_col='sentiment', 
             output_subfolder='raw', 
-            metric_name='Raw Sentiment Score'
+            metric_name='原始情感分数'
         )
 
         # 2. 输出 Z-Score 图片 (Z-Score)
@@ -273,7 +274,7 @@ def main():
             df=df, 
             metric_col='sentiment_zscore', 
             output_subfolder='z-score', 
-            metric_name='Sentiment Z-Score'
+            metric_name='情感 Z-分数'
         )
 
     print(f"\n★ 全部完成！耗时: {time.time() - start_time:.2f} 秒")

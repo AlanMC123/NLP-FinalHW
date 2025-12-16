@@ -1,1 +1,3 @@
 corpus/
+consistency_analysis/consistency_results.csv
+senti_complexity_roberta/roberta_results.csv

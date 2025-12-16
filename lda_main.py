@@ -12,6 +12,17 @@ import os
 import multiprocessing
 from joblib import Parallel, delayed
 from tqdm import tqdm
+from nltk.stem import WordNetLemmatizer
+
+try:
+    nltk.download('punkt', quiet=True)
+    # --- 新增：下载词形还原所需的资源 ---
+    nltk.download('wordnet', quiet=True)
+    nltk.download('omw-1.4', quiet=True)
+except Exception:
+    pass
+
+lemmatizer = WordNetLemmatizer()
 
 # ==========================================
 # 1. 核心数配置
@@ -48,11 +59,45 @@ all_stopwords = set(nltk_stopwords + custom_stopwords)
 def preprocess_text(text):
     if pd.isna(text) or text is None:
         return []
-    text = str(text).lower()
+    
+    # 定义需要保留原始大小写的政党名称
+    party_names = ['Conservative', 'Labour', 'Liberal-Democrat', 'Scottish-National-Party', 'Plaid-Cymru', 
+                  'Labourco-operative', 'UUP', 'DUP', 'Green', 'Independent', 
+                  'Social-Democratic-and-Labour-Party', 'Respect', 'UKIP', 'Alliance', 
+                  'Independent-Conservative', 'Independent-Ulster-Unionist']
+    
+    # 将文本转换为字符串
+    text = str(text)
+    
+    # 移除非字母和空格的字符
     text = re.sub(r'[^a-zA-Z\s]', '', text)
-    words = simple_preprocess(text, deacc=True)
-    # 稍微放宽长度限制，保留2个字母的词
+    
+    # 分词并处理每个单词
+    words = []
+    for word in text.split():
+        # 检查是否为政党名称（不区分大小写）
+        is_party = False
+        for party in party_names:
+            if word.lower() == party.lower():
+                # 保留原始大小写
+                words.append(party)
+                is_party = True
+                break
+        
+        # 如果不是政党名称，则转换为小写
+        if not is_party:
+            # 1. 转小写
+            w = word.lower()
+            # 2. 词形还原 (动词还原，例如 voted -> vote)
+            w = lemmatizer.lemmatize(w, pos='v')
+            # 3.再次还原 (名词还原，例如 parties -> party)
+            w = lemmatizer.lemmatize(w, pos='n')
+            
+            words.append(w)
+    
+    # 过滤停用词和短词
     words = [word for word in words if word not in all_stopwords and len(word) >= 2]
+    
     return words
 
 def plot_word_frequency(data, party_col, processed_text_col, prefix, result_folder):
@@ -361,7 +406,7 @@ if __name__ == '__main__':
             year_col='year',  
             prefix='lda',  
             result_folder=result_folder,
-            num_topics=7
+            num_topics=8
         )
         
         print("\n程序完成！")
