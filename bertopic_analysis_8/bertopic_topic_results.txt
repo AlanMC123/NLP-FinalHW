@@ -1,0 +1,87 @@
+BERTopic 主题结果
+==============================
+
+主题 0:
+  child: 0.0177
+  labour: 0.0173
+  school: 0.0161
+  power: 0.0146
+  measure: 0.0133
+  economy: 0.0127
+  pension: 0.0122
+  energy: 0.0119
+  election: 0.0113
+  family: 0.0113
+
+主题 1:
+  health: 0.0836
+  patient: 0.0719
+  care: 0.0643
+  hospital: 0.0441
+  doctor: 0.0244
+  trust: 0.0244
+  medical: 0.0234
+  treatment: 0.0234
+  disability: 0.0222
+  disable: 0.0220
+
+主题 2:
+  nuclear: 0.2044
+  weapon: 0.1226
+  deterrent: 0.1003
+  submarine: 0.0773
+  trident: 0.0769
+  defence: 0.0648
+  treaty: 0.0433
+  nato: 0.0405
+  deterrence: 0.0378
+  continuous: 0.0352
+
+主题 3:
+  iraq: 0.1159
+  isil: 0.1071
+  syria: 0.0963
+  refugee: 0.0796
+  military: 0.0633
+  international: 0.0443
+  humanitarian: 0.0433
+  child: 0.0385
+  ally: 0.0383
+  pose: 0.0375
+
+主题 4:
+  smoke: 0.1261
+  tobacco: 0.0689
+  shop: 0.0653
+  pub: 0.0629
+  alcohol: 0.0514
+  town: 0.0434
+  duty: 0.0423
+  street: 0.0406
+  sunday: 0.0380
+  drink: 0.0374
+
+主题 5:
+  withdrawal: 0.4575
+  title: 0.2460
+  march: 0.1775
+  agreement: 0.1573
+  accordance: 0.1536
+  january: 0.1449
+  default: 0.1042
+  ratify: 0.1020
+  unless: 0.0831
+  decline: 0.0827
+
+主题 6:
+  areyes: 3.3313
+  unionyes: 3.0566
+  presumably: 1.7081
+  certainly: 1.1460
+  : 0.0000
+  : 0.0000
+  : 0.0000
+  : 0.0000
+  : 0.0000
+  : 0.0000
+

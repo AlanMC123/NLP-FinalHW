@@ -1,0 +1,167 @@
+BERTopic 年度与政党Top5话题分析
+==================================================
+
+1. 每年Top5话题
+------------------------------
+
+年份 1997:
+  1. 主题 1: 文档数=29, 比例=13.43%, 关键词=economy, growth, economic, deficit, bank
+  2. 主题 9: 文档数=29, 比例=13.43%, 关键词=hunt, animal, cull, farmer, badger
+  3. 主题 20: 文档数=18, 比例=8.33%, 关键词=treaty, europe, foreign, enlargement, british
+  4. 主题 0: 文档数=16, 比例=7.41%, 关键词=health, patient, care, hospital, mental
+  5. 主题 8: 文档数=16, 比例=7.41%, 关键词=scottish, scotland, snp, devolve, devolution
+
+年份 1998:
+  1. 主题 8: 文档数=102, 比例=15.64%, 关键词=scottish, scotland, snp, devolve, devolution
+  2. 主题 7: 文档数=78, 比例=11.96%, 关键词=ireland, northern, decommission, ira, agreement
+  3. 主题 3: 文档数=63, 比例=9.66%, 关键词=election, electoral, lord, elect, candidate
+  4. 主题 9: 文档数=61, 比例=9.36%, 关键词=hunt, animal, cull, farmer, badger
+  5. 主题 4: 文档数=60, 比例=9.20%, 关键词=school, education, child, teacher, academy
+
+年份 1999:
+  1. 主题 3: 文档数=48, 比例=12.15%, 关键词=election, electoral, lord, elect, candidate
+  2. 主题 4: 文档数=26, 比例=6.58%, 关键词=school, education, child, teacher, academy
+  3. 主题 16: 文档数=23, 比例=5.82%, 关键词=lord, insist, disagreement, lieu, card
+  4. 主题 43: 文档数=23, 比例=5.82%, 关键词=mayor, london, borough, city, power
+  5. 主题 7: 文档数=20, 比例=5.06%, 关键词=ireland, northern, decommission, ira, agreement
+
+年份 2000:
+  1. 主题 0: 文档数=60, 比例=15.19%, 关键词=health, patient, care, hospital, mental
+  2. 主题 7: 文档数=40, 比例=10.13%, 关键词=ireland, northern, decommission, ira, agreement
+  3. 主题 2: 文档数=31, 比例=7.85%, 关键词=energy, price, climate, carbon, fuel
+  4. 主题 9: 文档数=23, 比例=5.82%, 关键词=hunt, animal, cull, farmer, badger
+  5. 主题 34: 文档数=23, 比例=5.82%, 关键词=cell, abortion, embryo, research, human
+
+年份 2001:
+  1. 主题 9: 文档数=72, 比例=18.37%, 关键词=hunt, animal, cull, farmer, badger
+  2. 主题 36: 文档数=52, 比例=13.27%, 关键词=religious, hatred, religion, muslim, belief
+  3. 主题 13: 文档数=46, 比例=11.73%, 关键词=terrorism, terrorist, offence, detention, liberty
+  4. 主题 20: 文档数=35, 比例=8.93%, 关键词=treaty, europe, foreign, enlargement, british
+  5. 主题 46: 文档数=24, 比例=6.12%, 关键词=proceeding, programme, vary, consideration, column
+
+年份 2002:
+  1. 主题 9: 文档数=72, 比例=11.73%, 关键词=hunt, animal, cull, farmer, badger
+  2. 主题 4: 文档数=69, 比例=11.24%, 关键词=school, education, child, teacher, academy
+  3. 主题 0: 文档数=43, 比例=7.00%, 关键词=health, patient, care, hospital, mental
+  4. 主题 7: 文档数=40, 比例=6.51%, 关键词=ireland, northern, decommission, ira, agreement
+  5. 主题 26: 文档数=39, 比例=6.35%, 关键词=refugee, asylum, camp, child, seeker
+
+年份 2003:
+  1. 主题 0: 文档数=127, 比例=14.68%, 关键词=health, patient, care, hospital, mental
+  2. 主题 7: 文档数=115, 比例=13.29%, 关键词=ireland, northern, decommission, ira, agreement
+  3. 主题 12: 文档数=60, 比例=6.94%, 关键词=jury, judge, court, trial, justice
+  4. 主题 2: 文档数=59, 比例=6.82%, 关键词=energy, price, climate, carbon, fuel
+  5. 主题 3: 文档数=41, 比例=4.74%, 关键词=election, electoral, lord, elect, candidate
+
+年份 2004:
+  1. 主题 6: 文档数=93, 比例=10.74%, 关键词=university, student, education, apprenticeship, fee
+  2. 主题 0: 文档数=73, 比例=8.43%, 关键词=health, patient, care, hospital, mental
+  3. 主题 18: 文档数=69, 比例=7.97%, 关键词=marriage, samesex, gay, partnership, civil
+  4. 主题 9: 文档数=59, 比例=6.81%, 关键词=hunt, animal, cull, farmer, badger
+  5. 主题 17: 文档数=59, 比例=6.81%, 关键词=child, parent, childrens, adoption, abuse
+
+年份 2005:
+  1. 主题 13: 文档数=133, 比例=22.58%, 关键词=terrorism, terrorist, offence, detention, liberty
+  2. 主题 12: 文档数=70, 比例=11.88%, 关键词=jury, judge, court, trial, justice
+  3. 主题 7: 文档数=38, 比例=6.45%, 关键词=ireland, northern, decommission, ira, agreement
+  4. 主题 15: 文档数=36, 比例=6.11%, 关键词=rail, bus, transport, railway, fare
+  5. 主题 16: 文档数=29, 比例=4.92%, 关键词=lord, insist, disagreement, lieu, card
+
+年份 2006:
+  1. 主题 4: 文档数=103, 比例=13.32%, 关键词=school, education, child, teacher, academy
+  2. 主题 32: 文档数=58, 比例=7.50%, 关键词=assembly, wale, welsh, power, devolution
+  3. 主题 7: 文档数=56, 比例=7.24%, 关键词=ireland, northern, decommission, ira, agreement
+  4. 主题 9: 文档数=48, 比例=6.21%, 关键词=hunt, animal, cull, farmer, badger
+  5. 主题 44: 文档数=42, 比例=5.43%, 关键词=smoke, tobacco, cigarette, smuggle, club
+
+年份 2007:
+  1. 主题 0: 文档数=37, 比例=8.45%, 关键词=health, patient, care, hospital, mental
+  2. 主题 43: 文档数=36, 比例=8.22%, 关键词=mayor, london, borough, city, power
+  3. 主题 16: 文档数=26, 比例=5.94%, 关键词=lord, insist, disagreement, lieu, card
+  4. 主题 22: 文档数=26, 比例=5.94%, 关键词=procedure, scrutiny, modernisation, program, audit
+  5. 主题 15: 文档数=25, 比例=5.71%, 关键词=rail, bus, transport, railway, fare
+
+年份 2008:
+  1. 主题 34: 文档数=116, 比例=14.20%, 关键词=cell, abortion, embryo, research, human
+  2. 主题 19: 文档数=92, 比例=11.26%, 关键词=treaty, europe, membership, relationship, lisbon
+  3. 主题 2: 文档数=75, 比例=9.18%, 关键词=energy, price, climate, carbon, fuel
+  4. 主题 20: 文档数=72, 比例=8.81%, 关键词=treaty, europe, foreign, enlargement, british
+  5. 主题 1: 文档数=56, 比例=6.85%, 关键词=economy, growth, economic, deficit, bank
+
+年份 2009:
+  1. 主题 1: 文档数=58, 比例=14.39%, 关键词=economy, growth, economic, deficit, bank
+  2. 主题 51: 文档数=38, 比例=9.43%, 关键词=alcohol, pub, drink, beer, duty
+  3. 主题 5: 文档数=34, 比例=8.44%, 关键词=child, family, poverty, income, parent
+  4. 主题 2: 文档数=33, 比例=8.19%, 关键词=energy, price, climate, carbon, fuel
+  5. 主题 3: 文档数=26, 比例=6.45%, 关键词=election, electoral, lord, elect, candidate
+
+年份 2010:
+  1. 主题 3: 文档数=196, 比例=17.63%, 关键词=election, electoral, lord, elect, candidate
+  2. 主题 4: 文档数=152, 比例=13.67%, 关键词=school, education, child, teacher, academy
+  3. 主题 6: 文档数=141, 比例=12.68%, 关键词=university, student, education, apprenticeship, fee
+  4. 主题 1: 文档数=106, 比例=9.53%, 关键词=economy, growth, economic, deficit, bank
+  5. 主题 14: 文档数=76, 比例=6.83%, 关键词=rent, tenant, landlord, property, affordable
+
+年份 2011:
+  1. 主题 0: 文档数=248, 比例=17.27%, 关键词=health, patient, care, hospital, mental
+  2. 主题 10: 文档数=100, 比例=6.96%, 关键词=pension, woman, age, annuity, pensioner
+  3. 主题 6: 文档数=94, 比例=6.55%, 关键词=university, student, education, apprenticeship, fee
+  4. 主题 5: 文档数=85, 比例=5.92%, 关键词=child, family, poverty, income, parent
+  5. 主题 21: 文档数=77, 比例=5.36%, 关键词=iraq, passport, isil, military, libya
+
+年份 2012:
+  1. 主题 0: 文档数=278, 比例=25.14%, 关键词=health, patient, care, hospital, mental
+  2. 主题 2: 文档数=108, 比例=9.76%, 关键词=energy, price, climate, carbon, fuel
+  3. 主题 1: 文档数=87, 比例=7.87%, 关键词=economy, growth, economic, deficit, bank
+  4. 主题 23: 文档数=68, 比例=6.15%, 关键词=lottery, sport, bingo, olympic, game
+  5. 主题 10: 文档数=61, 比例=5.52%, 关键词=pension, woman, age, annuity, pensioner
+
+年份 2013:
+  1. 主题 2: 文档数=148, 比例=12.91%, 关键词=energy, price, climate, carbon, fuel
+  2. 主题 18: 文档数=131, 比例=11.43%, 关键词=marriage, samesex, gay, partnership, civil
+  3. 主题 1: 文档数=130, 比例=11.34%, 关键词=economy, growth, economic, deficit, bank
+  4. 主题 0: 文档数=86, 比例=7.50%, 关键词=health, patient, care, hospital, mental
+  5. 主题 6: 文档数=47, 比例=4.10%, 关键词=university, student, education, apprenticeship, fee
+
+年份 2014:
+  1. 主题 21: 文档数=166, 比例=16.50%, 关键词=iraq, passport, isil, military, libya
+  2. 主题 0: 文档数=100, 比例=9.94%, 关键词=health, patient, care, hospital, mental
+  3. 主题 14: 文档数=94, 比例=9.34%, 关键词=rent, tenant, landlord, property, affordable
+  4. 主题 5: 文档数=56, 比例=5.57%, 关键词=child, family, poverty, income, parent
+  5. 主题 1: 文档数=53, 比例=5.27%, 关键词=economy, growth, economic, deficit, bank
+
+年份 2015:
+  1. 主题 0: 文档数=263, 比例=17.69%, 关键词=health, patient, care, hospital, mental
+  2. 主题 5: 文档数=193, 比例=12.98%, 关键词=child, family, poverty, income, parent
+  3. 主题 42: 文档数=149, 比例=10.02%, 关键词=syria, isil, military, ally, daesh
+  4. 主题 27: 文档数=88, 比例=5.92%, 关键词=nuclear, weapon, deterrent, submarine, trident
+  5. 主题 1: 文档数=83, 比例=5.58%, 关键词=economy, growth, economic, deficit, bank
+
+年份 2016:
+  1. 主题 6: 文档数=124, 比例=12.40%, 关键词=university, student, education, apprenticeship, fee
+  2. 主题 27: 文档数=88, 比例=8.80%, 关键词=nuclear, weapon, deterrent, submarine, trident
+  3. 主题 10: 文档数=79, 比例=7.90%, 关键词=pension, woman, age, annuity, pensioner
+  4. 主题 1: 文档数=73, 比例=7.30%, 关键词=economy, growth, economic, deficit, bank
+  5. 主题 5: 文档数=60, 比例=6.00%, 关键词=child, family, poverty, income, parent
+
+年份 2017:
+  1. 主题 8: 文档数=70, 比例=12.30%, 关键词=scottish, scotland, snp, devolve, devolution
+  2. 主题 24: 文档数=48, 比例=8.44%, 关键词=universal, rollout, meal, humble, annul
+  3. 主题 1: 文档数=47, 比例=8.26%, 关键词=economy, growth, economic, deficit, bank
+  4. 主题 11: 文档数=41, 比例=7.21%, 关键词=brexit, withdrawal, agreement, extension, article
+  5. 主题 0: 文档数=39, 比例=6.85%, 关键词=health, patient, care, hospital, mental
+
+年份 2018:
+  1. 主题 24: 文档数=102, 比例=11.90%, 关键词=universal, rollout, meal, humble, annul
+  2. 主题 30: 文档数=85, 比例=9.92%, 关键词=war, iraq, arm, chilcot, military
+  3. 主题 8: 文档数=74, 比例=8.63%, 关键词=scottish, scotland, snp, devolve, devolution
+  4. 主题 41: 文档数=66, 比例=7.70%, 关键词=airport, heathrow, noise, flight, runway
+  5. 主题 40: 文档数=64, 比例=7.47%, 关键词=immigration, windrush, ukba, generation, caribbean
+
+年份 2019:
+  1. 主题 11: 文档数=299, 比例=33.75%, 关键词=brexit, withdrawal, agreement, extension, article
+  2. 主题 38: 文档数=161, 比例=18.17%, 关键词=withdrawal, title, march, accordance, january
+  3. 主题 0: 文档数=58, 比例=6.55%, 关键词=health, patient, care, hospital, mental
+  4. 主题 7: 文档数=57, 比例=6.43%, 关键词=ireland, northern, decommission, ira, agreement
+  5. 主题 1: 文档数=42, 比例=4.74%, 关键词=economy, growth, economic, deficit, bank
+

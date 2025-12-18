@@ -2,3 +2,4 @@ corpus/
 roberta_results.csv
 clustering_results.csv
 clustering_with_sentiment.csv
+models/

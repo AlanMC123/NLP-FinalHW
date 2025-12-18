@@ -14,6 +14,7 @@ from sklearn.cluster import KMeans
 from sklearn.manifold import TSNE
 from sklearn.preprocessing import normalize
 from sklearn.feature_extraction.text import TfidfVectorizer 
+from sklearn.metrics import silhouette_score, calinski_harabasz_score, davies_bouldin_score 
 from nltk.stem import WordNetLemmatizer
 from nltk import pos_tag
 from nltk.corpus import wordnet
@@ -257,8 +258,8 @@ def main(k):
     save_dir = f'clustering_analysis_{k}'
     os.makedirs(save_dir, exist_ok=True)
     # 修改模型文件名以区分是否使用了词干化
-    model_name = 'word2vec.model'
-    model_path = os.path.join("w2v_models", model_name)
+    model_name = 'word2vec_kmeans.model'
+    model_path = os.path.join("models", model_name)
     
     model = None
     if os.path.exists(model_path):
@@ -309,9 +310,19 @@ def main(k):
     best_k = find_optimal_k_elbow(doc_vectors_norm, max_k=15, save_dir=save_dir)
     best_k = k
 
-    print(f"\n正在使用最佳 K={best_k} 运行最终聚类...")
+    print(f"正在使用最佳 K={best_k} 运行最终聚类...")
     kmeans = KMeans(n_clusters=best_k, random_state=2026, n_init=10)
     kmeans_labels = kmeans.fit_predict(doc_vectors_norm)
+    
+    # 计算聚类评估指标
+    silhouette_avg = silhouette_score(doc_vectors_norm, kmeans_labels)
+    ch_score = calinski_harabasz_score(doc_vectors_norm, kmeans_labels)
+    dbi_score = davies_bouldin_score(doc_vectors_norm, kmeans_labels)
+    
+    print(f"\n🔍 聚类评估指标:")
+    print(f"   轮廓系数 (Silhouette Score): {silhouette_avg:.4f}")
+    print(f"   CH指数 (Calinski-Harabasz Score): {ch_score:.4f}")
+    print(f"   DBI指数 (Davies-Bouldin Index): {dbi_score:.4f}")
 
     # ==========================================
     # 6. 降维可视化

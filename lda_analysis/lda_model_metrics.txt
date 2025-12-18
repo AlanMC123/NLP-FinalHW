@@ -1,0 +1,5 @@
+LDA 模型评估指标
+==============================
+困惑度 (Perplexity): -8.5287
+主题一致性 (Coherence Score): 0.4851
+主题多样性 (Topic Diversity): 0.8500

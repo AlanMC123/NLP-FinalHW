@@ -13,6 +13,7 @@ from gensim.utils import simple_preprocess
 from sklearn.manifold import TSNE
 from sklearn.preprocessing import normalize
 from sklearn.feature_extraction.text import TfidfVectorizer 
+from sklearn.metrics import silhouette_score, calinski_harabasz_score, davies_bouldin_score
 from nltk.stem import WordNetLemmatizer
 from nltk import pos_tag
 from nltk.corpus import wordnet
@@ -217,7 +218,7 @@ def main():
     os.makedirs(save_dir, exist_ok=True)
     # 修改模型文件名以区分是否使用了词干化
     model_name = 'word2vec_clara.model'
-    model_path = os.path.join("w2v_models", model_name)
+    model_path = os.path.join("models", model_name)
     
     model = None
     if os.path.exists(model_path):
@@ -363,6 +364,16 @@ def main():
     
     total_clusters = len(set(clara_labels))
     print(f"总聚类数: {total_clusters} 个")
+    
+    # 计算聚类评估指标
+    silhouette_avg = silhouette_score(doc_vectors_norm, clara_labels)
+    ch_score = calinski_harabasz_score(doc_vectors_norm, clara_labels)
+    dbi_score = davies_bouldin_score(doc_vectors_norm, clara_labels)
+    
+    print(f"\n🔍 聚类评估指标:")
+    print(f"   轮廓系数 (Silhouette Score): {silhouette_avg:.4f}")
+    print(f"   CH指数 (Calinski-Harabasz Score): {ch_score:.4f}")
+    print(f"   DBI指数 (Davies-Bouldin Index): {dbi_score:.4f}")
 
     # ==========================================
     # 6. 降维可视化

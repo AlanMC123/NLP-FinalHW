@@ -1,0 +1,5 @@
+BERTopic 模型评估指标
+==============================
+主题一致性 (Coherence Score): 0.5838
+主题多样性 (Topic Diversity): 0.9143
+困惑度 (Perplexity): 1.6924

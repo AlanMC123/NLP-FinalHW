@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from gensim import corpora, models
 from gensim.models.ldamulticore import LdaMulticore
+from gensim.models.coherencemodel import CoherenceModel
 from gensim.utils import simple_preprocess
 from nltk.corpus import stopwords
 import nltk
@@ -363,6 +364,58 @@ def train_combined_lda_and_analyze(data, combined_text_col, party_col, year_col,
 
     print("\n正在进行词频统计...")
     plot_word_frequency(data, party_col, combined_text_col, prefix, result_folder)
+    
+    # ==========================================
+    # 计算模型评估指标
+    # ==========================================
+    print("\n>>> 计算模型评估指标 <<<")
+    
+    # 1. 困惑度 (Perplexity)
+    perplexity = lda_model.log_perplexity(corpus)
+    print(f"\n🔍 困惑度 (Perplexity): {perplexity:.4f}")
+    
+    # 2. 主题一致性 (Coherence Score) - 使用全量数据和多线程
+    coherence_model = CoherenceModel(model=lda_model, texts=texts, dictionary=dictionary, coherence='c_v', processes=NUM_CORES)
+    coherence_score = coherence_model.get_coherence()
+    print(f"🔍 主题一致性 (Coherence Score): {coherence_score:.4f}")
+    
+    # 3. 主题多样性 (Topic Diversity)
+    def calculate_topic_diversity(model, top_n=10):
+        """计算主题多样性：不同主题中唯一词的比例"""
+        topics = model.print_topics(num_words=top_n)
+        all_words = set()
+        total_words = 0
+        
+        for topic in topics:
+            # 提取主题词
+            topic_words = re.findall(r'"(\w+)"', topic[1])
+            all_words.update(topic_words)
+            total_words += len(topic_words)
+        
+        if total_words == 0:
+            return 0.0
+        
+        return len(all_words) / total_words
+    
+    topic_diversity = calculate_topic_diversity(lda_model)
+    print(f"🔍 主题多样性 (Topic Diversity): {topic_diversity:.4f}")
+    
+    # 保存指标到文件
+    metrics_file = os.path.join(result_folder, f'{prefix}_model_metrics.txt')
+    with open(metrics_file, 'w', encoding='utf-8') as f:
+        f.write("LDA 模型评估指标\n")
+        f.write("=" * 30 + "\n")
+        f.write(f"困惑度 (Perplexity): {perplexity:.4f}\n")
+        f.write(f"主题一致性 (Coherence Score): {coherence_score:.4f}\n")
+        f.write(f"主题多样性 (Topic Diversity): {topic_diversity:.4f}\n")
+    print(f"✅ 模型指标已保存到: {metrics_file}")
+    
+    # 保存模型
+    model_dir = 'models/lda'
+    os.makedirs(model_dir, exist_ok=True)
+    model_path = os.path.join(model_dir, 'lda.model')
+    lda_model.save(model_path)
+    print(f"✅ LDA 模型已保存到: {model_path}")
     
     return data, lda_model, dictionary, corpus
 

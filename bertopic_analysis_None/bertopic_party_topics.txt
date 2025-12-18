@@ -1,0 +1,97 @@
+BERTopic 政党Top5话题分析
+==================================================
+
+1. 每个政党Top5话题
+------------------------------
+
+政党 alliance:
+  1. 主题 7: 比例=95.65%, 关键词=ireland, northern, decommission, ira, agreement
+  2. 主题 8: 比例=4.35%, 关键词=scottish, scotland, snp, devolve, devolution
+  3. 主题 0: 比例=0.00%, 关键词=health, patient, care, hospital, mental
+  4. 主题 3: 比例=0.00%, 关键词=election, electoral, lord, elect, candidate
+  5. 主题 4: 比例=0.00%, 关键词=school, education, child, teacher, academy
+
+政党 conservative:
+  1. 主题 0: 比例=6.72%, 关键词=health, patient, care, hospital, mental
+  2. 主题 1: 比例=5.53%, 关键词=economy, growth, economic, deficit, bank
+  3. 主题 4: 比例=4.45%, 关键词=school, education, child, teacher, academy
+  4. 主题 3: 比例=4.09%, 关键词=election, electoral, lord, elect, candidate
+  5. 主题 11: 比例=3.91%, 关键词=brexit, withdrawal, agreement, extension, article
+
+政党 dup:
+  1. 主题 7: 比例=46.73%, 关键词=ireland, northern, decommission, ira, agreement
+  2. 主题 19: 比例=21.50%, 关键词=treaty, europe, membership, relationship, lisbon
+  3. 主题 41: 比例=19.63%, 关键词=airport, heathrow, noise, flight, runway
+  4. 主题 20: 比例=9.35%, 关键词=treaty, europe, foreign, enlargement, british
+  5. 主题 8: 比例=1.87%, 关键词=scottish, scotland, snp, devolve, devolution
+
+政党 green:
+  1. 主题 9: 比例=75.71%, 关键词=hunt, animal, cull, farmer, badger
+  2. 主题 2: 比例=12.86%, 关键词=energy, price, climate, carbon, fuel
+  3. 主题 4: 比例=2.86%, 关键词=school, education, child, teacher, academy
+  4. 主题 17: 比例=2.86%, 关键词=child, parent, childrens, adoption, abuse
+  5. 主题 12: 比例=1.43%, 关键词=jury, judge, court, trial, justice
+
+政党 independent:
+  1. 主题 9: 比例=100.00%, 关键词=hunt, animal, cull, farmer, badger
+  2. 主题 1: 比例=0.00%, 关键词=economy, growth, economic, deficit, bank
+  3. 主题 0: 比例=0.00%, 关键词=health, patient, care, hospital, mental
+  4. 主题 3: 比例=0.00%, 关键词=election, electoral, lord, elect, candidate
+  5. 主题 4: 比例=0.00%, 关键词=school, education, child, teacher, academy
+
+政党 independent-conservative:
+  1. 主题 7: 比例=50.00%, 关键词=ireland, northern, decommission, ira, agreement
+  2. 主题 12: 比例=25.00%, 关键词=jury, judge, court, trial, justice
+  3. 主题 16: 比例=25.00%, 关键词=lord, insist, disagreement, lieu, card
+  4. 主题 3: 比例=0.00%, 关键词=election, electoral, lord, elect, candidate
+  5. 主题 0: 比例=0.00%, 关键词=health, patient, care, hospital, mental
+
+政党 labour:
+  1. 主题 0: 比例=11.22%, 关键词=health, patient, care, hospital, mental
+  2. 主题 2: 比例=6.40%, 关键词=energy, price, climate, carbon, fuel
+  3. 主题 1: 比例=5.86%, 关键词=economy, growth, economic, deficit, bank
+  4. 主题 5: 比例=4.76%, 关键词=child, family, poverty, income, parent
+  5. 主题 4: 比例=4.68%, 关键词=school, education, child, teacher, academy
+
+政党 labourco-operative:
+  1. 主题 0: 比例=32.12%, 关键词=health, patient, care, hospital, mental
+  2. 主题 9: 比例=16.16%, 关键词=hunt, animal, cull, farmer, badger
+  3. 主题 5: 比例=14.75%, 关键词=child, family, poverty, income, parent
+  4. 主题 6: 比例=8.48%, 关键词=university, student, education, apprenticeship, fee
+  5. 主题 1: 比例=6.46%, 关键词=economy, growth, economic, deficit, bank
+
+政党 liberal-democrat:
+  1. 主题 6: 比例=8.38%, 关键词=university, student, education, apprenticeship, fee
+  2. 主题 49: 比例=5.83%, 关键词=post, mail, network, postal, mutuals
+  3. 主题 36: 比例=5.27%, 关键词=religious, hatred, religion, muslim, belief
+  4. 主题 0: 比例=4.79%, 关键词=health, patient, care, hospital, mental
+  5. 主题 10: 比例=4.63%, 关键词=pension, woman, age, annuity, pensioner
+
+政党 plaid-cymru:
+  1. 主题 32: 比例=22.54%, 关键词=assembly, wale, welsh, power, devolution
+  2. 主题 10: 比例=16.20%, 关键词=pension, woman, age, annuity, pensioner
+  3. 主题 0: 比例=14.08%, 关键词=health, patient, care, hospital, mental
+  4. 主题 3: 比例=13.38%, 关键词=election, electoral, lord, elect, candidate
+  5. 主题 8: 比例=10.56%, 关键词=scottish, scotland, snp, devolve, devolution
+
+政党 scottish-national-party:
+  1. 主题 8: 比例=16.64%, 关键词=scottish, scotland, snp, devolve, devolution
+  2. 主题 26: 比例=12.82%, 关键词=refugee, asylum, camp, child, seeker
+  3. 主题 27: 比例=12.14%, 关键词=nuclear, weapon, deterrent, submarine, trident
+  4. 主题 10: 比例=7.64%, 关键词=pension, woman, age, annuity, pensioner
+  5. 主题 52: 比例=6.68%, 关键词=yearolds, franchise, age, election, citizen
+
+政党 social-democratic-and-labour-party:
+  1. 主题 7: 比例=90.00%, 关键词=ireland, northern, decommission, ira, agreement
+  2. 主题 8: 比例=10.00%, 关键词=scottish, scotland, snp, devolve, devolution
+  3. 主题 0: 比例=0.00%, 关键词=health, patient, care, hospital, mental
+  4. 主题 3: 比例=0.00%, 关键词=election, electoral, lord, elect, candidate
+  5. 主题 4: 比例=0.00%, 关键词=school, education, child, teacher, academy
+
+政党 uup:
+  1. 主题 7: 比例=63.16%, 关键词=ireland, northern, decommission, ira, agreement
+  2. 主题 9: 比例=10.53%, 关键词=hunt, animal, cull, farmer, badger
+  3. 主题 48: 比例=7.89%, 关键词=presumably, certainly, , , 
+  4. 主题 3: 比例=5.26%, 关键词=election, electoral, lord, elect, candidate
+  5. 主题 16: 比例=2.63%, 关键词=lord, insist, disagreement, lieu, card
+

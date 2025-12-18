@@ -1,0 +1,9 @@
+topic_id,top_words,description
+0,"['election', 'electoral', 'university', 'student', 'scottish', 'register', 'court', 'elect', 'liberal']","主题 0 主要涉及: election, electoral, university, student, scottish"
+1,"['economy', 'growth', 'bank', 'economic', 'crime', 'unemployment', 'investment', 'deficit', 'debt']","主题 1 主要涉及: economy, growth, bank, economic, crime"
+2,"['child', 'woman', 'family', 'pension', 'income', 'employment', 'parent', 'care', 'poverty']","主题 2 主要涉及: child, woman, family, pension, income"
+3,"['health', 'nh', 'care', 'patient', 'hospital', 'trust', 'mental', 'treatment', 'nurse']","主题 3 主要涉及: health, nh, care, patient, hospital"
+4,"['ireland', 'northern', 'treaty', 'agreement', 'europe', 'british', 'scotland', 'kingdom', 'court', 'scottish']","主题 4 主要涉及: ireland, northern, treaty, agreement, europe"
+5,"['london', 'bank', 'pension', 'rent', 'food', 'property', 'city', 'rural', 'duty', 'investment']","主题 5 主要涉及: london, bank, pension, rent, food"
+6,"['energy', 'company', 'price', 'market', 'fuel', 'iraq', 'consumer', 'military', 'international', 'syria']","主题 6 主要涉及: energy, company, price, market, fuel"
+7,"['school', 'education', 'child', 'parent', 'teacher', 'marriage', 'age', 'sport', 'pupil']","主题 7 主要涉及: school, education, child, parent, teacher"
