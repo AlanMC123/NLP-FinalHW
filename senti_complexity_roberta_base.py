@@ -110,6 +110,86 @@ def run_gpu_inference(df):
 # ==========================================
 # 2. 绘图通用函数
 # ==========================================
+def generate_time_series_plots(df, metric_col, output_subfolder, metric_name="Sentiment"):
+    """
+    生成情绪与复杂度随时间变化的折线图
+    
+    Args:
+        df: 数据集
+        metric_col: 要分析的列名 ('sentiment' 或 'sentiment_zscore')
+        output_subfolder: 输出子文件夹名 ('raw' 或 'z-score')
+        metric_name: 图表中显示的指标名称
+    """
+    # 确保子目录存在
+    save_path_root = os.path.join(SAVE_DIR, output_subfolder)
+    os.makedirs(save_path_root, exist_ok=True)
+    
+    print(f"    正在生成时间序列图表到: {save_path_root} ...")
+    
+    # 从 debate_id 提取年份
+    df = df.copy()
+    # debate_id 格式：YYYY-MM-DDa.XXX.YYY 或 YYYY-MM-DDa.XXX
+    df['year'] = df['debate_id'].str.extract(r'(\d{4})')[0].astype(int)
+    
+    # 按年份聚合，计算平均值
+    time_df = df.groupby('year')[[metric_col, 'complexity']].mean().reset_index()
+    
+    # 排序年份
+    time_df = time_df.sort_values('year')
+    
+    # ---------------------------------------------------------  
+    # 1. 情绪随年份变化折线图（年平均）
+    # ---------------------------------------------------------  
+    plt.figure(figsize=(12, 6))
+    plt.plot(time_df['year'], time_df[metric_col], marker='o', markersize=6, linewidth=2, color='#3498db')
+    plt.title(f'{metric_name} 情绪年平均变化', fontsize=18)
+    plt.xlabel('年份', fontsize=14)
+    plt.ylabel(f'{metric_name} 情感极性', fontsize=14)
+    plt.grid(True, alpha=0.3)
+    plt.xticks(time_df['year'], rotation=0)
+    plt.tight_layout()
+    plt.savefig(os.path.join(save_path_root, f'time_series_{metric_col}_yearly.png'), dpi=300)
+    plt.close()
+    
+    # ---------------------------------------------------------  
+    # 2. 复杂度随年份变化折线图（年平均）
+    # ---------------------------------------------------------  
+    plt.figure(figsize=(12, 6))
+    plt.plot(time_df['year'], time_df['complexity'], marker='o', markersize=6, linewidth=2, color='#e74c3c')
+    plt.title('文本复杂度年平均变化', fontsize=18)
+    plt.xlabel('年份', fontsize=14)
+    plt.ylabel('复杂度', fontsize=14)
+    plt.grid(True, alpha=0.3)
+    plt.xticks(time_df['year'], rotation=0)
+    plt.tight_layout()
+    plt.savefig(os.path.join(save_path_root, 'time_series_complexity_yearly.png'), dpi=300)
+    plt.close()
+    
+    # ---------------------------------------------------------  
+    # 3. 情绪与复杂度随年份变化对比图（年平均）
+    # ---------------------------------------------------------  
+    fig, ax1 = plt.subplots(figsize=(12, 6))
+    
+    # 左侧y轴：情绪
+    ax1.set_xlabel('年份', fontsize=14)
+    ax1.set_ylabel(f'{metric_name} 情感极性', fontsize=14, color='#3498db')
+    ax1.plot(time_df['year'], time_df[metric_col], marker='o', markersize=6, linewidth=2, color='#3498db')
+    ax1.tick_params(axis='y', labelcolor='#3498db')
+    ax1.grid(True, alpha=0.3)
+    ax1.set_xticks(time_df['year'])
+    ax1.tick_params(axis='x', rotation=0)
+    
+    # 右侧y轴：复杂度
+    ax2 = ax1.twinx()
+    ax2.set_ylabel('复杂度', fontsize=14, color='#e74c3c')
+    ax2.plot(time_df['year'], time_df['complexity'], marker='s', markersize=6, linewidth=2, color='#e74c3c')
+    ax2.tick_params(axis='y', labelcolor='#e74c3c')
+    
+    plt.title(f'{metric_name} 情绪与复杂度年平均变化对比', fontsize=18)
+    fig.tight_layout()
+    plt.savefig(os.path.join(save_path_root, f'time_series_{metric_col}_vs_complexity_yearly.png'), dpi=300)
+    plt.close()
+
 def generate_plots(df, metric_col, output_subfolder, metric_name="Sentiment"):
     """
     Args:
@@ -268,9 +348,25 @@ def main():
             output_subfolder='raw', 
             metric_name='原始情感分数'
         )
+        
+        # 生成原始分数的时间序列图表
+        generate_time_series_plots(
+            df=df, 
+            metric_col='sentiment', 
+            output_subfolder='raw', 
+            metric_name='原始情感分数'
+        )
 
         # 2. 输出 Z-Score 图片 (Z-Score)
         generate_plots(
+            df=df, 
+            metric_col='sentiment_zscore', 
+            output_subfolder='z-score', 
+            metric_name='情感 Z-分数'
+        )
+        
+        # 生成 Z-Score 分数的时间序列图表
+        generate_time_series_plots(
             df=df, 
             metric_col='sentiment_zscore', 
             output_subfolder='z-score', 
