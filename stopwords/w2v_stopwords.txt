@@ -1248,3 +1248,10 @@ give
 gives
 giving
 given
+subsection
+paragraph
+laid
+apporved
+approves
+approve
+th

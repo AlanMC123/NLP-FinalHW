@@ -2,662 +2,578 @@ BERTopic 主题结果
 ==============================
 
 主题 0:
-  health: 0.0574
-  patient: 0.0510
-  care: 0.0459
-  hospital: 0.0393
-  mental: 0.0195
-  treatment: 0.0192
-  doctor: 0.0177
-  trust: 0.0164
-  medical: 0.0150
-  reorganisation: 0.0127
+  justice: 0.0283
+  court: 0.0278
+  prison: 0.0271
+  judge: 0.0205
+  criminal: 0.0202
+  jury: 0.0197
+  crime: 0.0181
+  sentence: 0.0173
+  offence: 0.0166
+  probation: 0.0161
 
 主题 1:
-  economy: 0.0275
-  growth: 0.0224
-  economic: 0.0211
-  deficit: 0.0152
-  bank: 0.0138
-  investment: 0.0133
-  debt: 0.0126
-  labour: 0.0123
-  fiscal: 0.0117
-  borrow: 0.0111
+  health: 0.0604
+  patient: 0.0525
+  care: 0.0479
+  hospital: 0.0416
+  mental: 0.0205
+  treatment: 0.0196
+  doctor: 0.0181
+  trust: 0.0171
+  medical: 0.0153
+  reorganisation: 0.0128
 
 主题 2:
-  energy: 0.0875
-  price: 0.0288
-  climate: 0.0275
-  carbon: 0.0258
-  fuel: 0.0242
-  company: 0.0233
-  green: 0.0222
-  market: 0.0210
-  electricity: 0.0205
-  emission: 0.0205
+  election: 0.0287
+  electoral: 0.0206
+  elect: 0.0152
+  candidate: 0.0133
+  voter: 0.0116
+  constitutional: 0.0110
+  argument: 0.0108
+  common: 0.0107
+  power: 0.0105
+  ballot: 0.0103
 
 主题 3:
-  election: 0.0406
-  electoral: 0.0251
-  lord: 0.0234
-  elect: 0.0233
-  candidate: 0.0216
-  voter: 0.0193
-  constitutional: 0.0168
-  boundary: 0.0147
-  hereditary: 0.0146
-  list: 0.0139
+  economy: 0.0272
+  growth: 0.0215
+  economic: 0.0206
+  deficit: 0.0138
+  labour: 0.0135
+  bank: 0.0133
+  investment: 0.0129
+  wage: 0.0123
+  debt: 0.0118
+  measure: 0.0114
 
 主题 4:
-  school: 0.1183
-  education: 0.0474
-  child: 0.0347
-  teacher: 0.0336
-  academy: 0.0293
-  pupil: 0.0287
-  parent: 0.0273
-  grammar: 0.0184
-  educational: 0.0151
-  faith: 0.0140
+  energy: 0.0928
+  price: 0.0314
+  climate: 0.0288
+  carbon: 0.0271
+  fuel: 0.0261
+  company: 0.0246
+  green: 0.0232
+  market: 0.0227
+  electricity: 0.0216
+  emission: 0.0215
 
 主题 5:
-  child: 0.0673
-  family: 0.0416
-  poverty: 0.0358
-  income: 0.0313
-  parent: 0.0300
-  care: 0.0209
-  household: 0.0166
-  lone: 0.0162
-  welfare: 0.0152
-  wage: 0.0149
+  ireland: 0.0860
+  northern: 0.0798
+  decommission: 0.0306
+  ira: 0.0297
+  agreement: 0.0295
+  sinn: 0.0286
+  belfast: 0.0246
+  unionist: 0.0233
+  fein: 0.0229
+  irish: 0.0179
 
 主题 6:
-  university: 0.0831
-  student: 0.0767
-  education: 0.0639
-  apprenticeship: 0.0476
-  fee: 0.0430
-  higher: 0.0409
-  college: 0.0292
-  graduate: 0.0228
-  tuition: 0.0185
-  skill: 0.0180
+  pension: 0.1195
+  woman: 0.0422
+  age: 0.0358
+  annuity: 0.0347
+  pensioner: 0.0335
+  retirement: 0.0324
+  income: 0.0260
+  universal: 0.0190
+  life: 0.0156
+  retire: 0.0145
 
 主题 7:
-  ireland: 0.0816
-  northern: 0.0758
-  decommission: 0.0300
-  ira: 0.0286
-  agreement: 0.0277
-  sinn: 0.0276
-  belfast: 0.0238
-  unionist: 0.0226
-  fein: 0.0221
-  irish: 0.0175
+  school: 0.1507
+  education: 0.0518
+  child: 0.0432
+  teacher: 0.0425
+  academy: 0.0422
+  pupil: 0.0365
+  parent: 0.0357
+  grammar: 0.0270
+  class: 0.0193
+  educational: 0.0184
 
 主题 8:
-  scottish: 0.0850
-  scotland: 0.0650
-  snp: 0.0241
-  devolve: 0.0232
+  scottish: 0.0892
+  scotland: 0.0685
+  snp: 0.0261
+  devolve: 0.0239
   devolution: 0.0217
-  power: 0.0190
-  kingdom: 0.0178
-  english: 0.0167
-  unite: 0.0167
-  election: 0.0135
+  power: 0.0202
+  kingdom: 0.0188
+  unite: 0.0184
+  english: 0.0168
+  election: 0.0132
 
 主题 9:
-  hunt: 0.0500
-  animal: 0.0491
-  cull: 0.0396
-  farmer: 0.0367
-  badger: 0.0329
-  dog: 0.0305
-  farm: 0.0300
-  fox: 0.0235
-  rural: 0.0220
-  food: 0.0216
+  hunt: 0.0555
+  animal: 0.0541
+  cull: 0.0437
+  farmer: 0.0393
+  badger: 0.0362
+  dog: 0.0333
+  farm: 0.0328
+  fox: 0.0257
+  rural: 0.0241
+  food: 0.0214
 
 主题 10:
-  pension: 0.1206
-  woman: 0.0442
-  age: 0.0374
-  annuity: 0.0362
-  pensioner: 0.0351
-  retirement: 0.0339
-  income: 0.0254
-  transitional: 0.0154
-  retire: 0.0153
-  affect: 0.0146
+  marriage: 0.0626
+  religious: 0.0392
+  gay: 0.0295
+  samesex: 0.0282
+  church: 0.0277
+  civil: 0.0271
+  partnership: 0.0262
+  religion: 0.0257
+  couple: 0.0244
+  homosexual: 0.0243
 
 主题 11:
-  brexit: 0.0605
-  withdrawal: 0.0440
-  agreement: 0.0362
-  extension: 0.0252
-  article: 0.0244
-  march: 0.0225
-  nodeal: 0.0205
-  negotiate: 0.0185
-  backstop: 0.0183
-  negotiation: 0.0175
+  university: 0.1138
+  student: 0.1102
+  education: 0.0685
+  fee: 0.0602
+  higher: 0.0585
+  graduate: 0.0315
+  tuition: 0.0229
+  college: 0.0217
+  loan: 0.0197
+  grant: 0.0179
 
 主题 12:
-  jury: 0.0628
-  judge: 0.0536
-  court: 0.0459
-  trial: 0.0433
-  justice: 0.0317
-  defendant: 0.0223
-  lord: 0.0198
-  criminal: 0.0196
-  judicial: 0.0196
-  material: 0.0169
+  poverty: 0.0590
+  child: 0.0513
+  family: 0.0479
+  income: 0.0414
+  wage: 0.0267
+  welfare: 0.0237
+  household: 0.0229
+  parent: 0.0176
+  universal: 0.0158
+  measure: 0.0153
 
 主题 13:
-  terrorism: 0.0702
-  terrorist: 0.0493
-  offence: 0.0298
-  detention: 0.0184
-  liberty: 0.0164
-  suspect: 0.0151
+  terrorism: 0.0723
+  terrorist: 0.0500
+  offence: 0.0307
+  detention: 0.0167
+  liberty: 0.0161
+  suspect: 0.0154
+  glorification: 0.0153
+  person: 0.0138
   power: 0.0133
-  activity: 0.0133
-  human: 0.0128
-  prosecution: 0.0127
+  activity: 0.0130
 
 主题 14:
-  rent: 0.0998
-  tenant: 0.0525
-  landlord: 0.0501
-  property: 0.0412
-  affordable: 0.0314
-  accommodation: 0.0275
-  family: 0.0223
-  bedroom: 0.0208
-  tenancy: 0.0207
-  agent: 0.0168
+  rent: 0.1040
+  tenant: 0.0537
+  landlord: 0.0496
+  property: 0.0402
+  affordable: 0.0347
+  accommodation: 0.0261
+  family: 0.0237
+  tenancy: 0.0223
+  bedroom: 0.0209
+  agent: 0.0186
 
 主题 15:
-  rail: 0.0754
-  bus: 0.0673
-  transport: 0.0532
-  railway: 0.0515
-  fare: 0.0500
-  passenger: 0.0378
-  crossrail: 0.0341
-  network: 0.0329
-  london: 0.0282
-  train: 0.0281
+  rail: 0.0801
+  bus: 0.0720
+  transport: 0.0553
+  railway: 0.0544
+  fare: 0.0532
+  passenger: 0.0399
+  crossrail: 0.0361
+  network: 0.0345
+  train: 0.0300
+  london: 0.0296
 
 主题 16:
-  lord: 0.1361
-  insist: 0.0940
-  disagreement: 0.0627
-  lieu: 0.0623
-  card: 0.0435
-  argument: 0.0278
-  hospital: 0.0180
-  foundation: 0.0166
-  thereof: 0.0164
-  identity: 0.0159
+  arm: 0.0548
+  defence: 0.0500
+  military: 0.0419
+  war: 0.0402
+  regiment: 0.0372
+  battalion: 0.0353
+  covenant: 0.0301
+  army: 0.0239
+  iraq: 0.0235
+  fusilier: 0.0213
 
 主题 17:
-  child: 0.0977
-  parent: 0.0409
-  childrens: 0.0390
-  adoption: 0.0309
-  abuse: 0.0203
-  adopt: 0.0182
-  foster: 0.0177
-  care: 0.0168
-  image: 0.0168
-  online: 0.0160
+  brexit: 0.0726
+  withdrawal: 0.0488
+  agreement: 0.0378
+  extension: 0.0293
+  article: 0.0270
+  march: 0.0252
+  nodeal: 0.0252
+  negotiate: 0.0187
+  backstop: 0.0176
+  custom: 0.0155
 
 主题 18:
-  marriage: 0.0950
-  samesex: 0.0427
-  gay: 0.0404
-  partnership: 0.0389
-  civil: 0.0388
-  couple: 0.0356
-  homosexual: 0.0335
-  marry: 0.0292
-  relationship: 0.0282
-  church: 0.0279
+  child: 0.1206
+  parent: 0.0569
+  care: 0.0450
+  childrens: 0.0351
+  adoption: 0.0268
+  family: 0.0221
+  adopt: 0.0161
+  foster: 0.0151
+  couple: 0.0146
+  vulnerable: 0.0132
 
 主题 19:
-  treaty: 0.1071
-  europe: 0.0610
-  membership: 0.0392
-  relationship: 0.0389
-  lisbon: 0.0349
-  renegotiate: 0.0337
-  cooperation: 0.0311
-  unite: 0.0300
-  british: 0.0277
-  foreign: 0.0262
+  post: 0.1462
+  mail: 0.1335
+  network: 0.0346
+  postal: 0.0305
+  charter: 0.0259
+  privatisation: 0.0194
+  iba: 0.0194
+  update: 0.0192
+  interbusiness: 0.0180
+  privatise: 0.0175
 
 主题 20:
-  treaty: 0.0850
-  europe: 0.0468
-  foreign: 0.0265
-  enlargement: 0.0209
-  british: 0.0184
-  lisbon: 0.0173
-  constitution: 0.0164
-  power: 0.0162
-  fish: 0.0152
-  amsterdam: 0.0143
+  treaty: 0.1137
+  europe: 0.0587
+  membership: 0.0447
+  relationship: 0.0401
+  renegotiate: 0.0374
+  lisbon: 0.0346
+  cooperation: 0.0339
+  unite: 0.0319
+  foreign: 0.0299
+  british: 0.0291
 
 主题 21:
-  iraq: 0.1199
-  passport: 0.0830
-  isil: 0.0774
-  military: 0.0485
-  libya: 0.0441
-  civilian: 0.0419
-  pose: 0.0373
-  request: 0.0356
-  international: 0.0353
-  arm: 0.0346
+  withdrawal: 0.2530
+  agreement: 0.1271
+  march: 0.0846
+  title: 0.0789
+  declaration: 0.0586
+  article: 0.0566
+  extension: 0.0503
+  accordance: 0.0485
+  interrupt: 0.0449
+  january: 0.0432
 
 主题 22:
-  procedure: 0.0182
-  scrutiny: 0.0181
-  modernisation: 0.0167
-  program: 0.0141
-  audit: 0.0132
-  common: 0.0126
-  recommendation: 0.0108
-  guillotine: 0.0105
-  auditor: 0.0104
-  table: 0.0097
+  refugee: 0.0989
+  asylum: 0.0603
+  child: 0.0441
+  camp: 0.0381
+  seeker: 0.0371
+  family: 0.0293
+  humanitarian: 0.0292
+  sanctuary: 0.0264
+  syria: 0.0237
+  europe: 0.0223
 
 主题 23:
-  lottery: 0.0966
-  sport: 0.0775
-  bingo: 0.0627
-  olympic: 0.0460
-  game: 0.0458
-  olympics: 0.0352
-  club: 0.0328
-  gamble: 0.0275
-  participation: 0.0244
-  london: 0.0239
+  disable: 0.0905
+  disability: 0.0814
+  employment: 0.0386
+  carers: 0.0340
+  assessment: 0.0333
+  allowance: 0.0274
+  condition: 0.0262
+  health: 0.0262
+  remploy: 0.0260
+  capability: 0.0241
 
 主题 24:
-  universal: 0.1143
-  rollout: 0.0564
-  meal: 0.0482
-  humble: 0.0424
-  annul: 0.0381
-  pray: 0.0314
-  lay: 0.0286
-  january: 0.0278
-  copy: 0.0276
-  arrears: 0.0226
+  london: 0.1055
+  mayor: 0.0955
+  borough: 0.0333
+  city: 0.0319
+  power: 0.0242
+  crime: 0.0240
+  assembly: 0.0193
+  park: 0.0177
+  londoner: 0.0165
+  strategic: 0.0159
 
 主题 25:
-  lay: 0.1187
-  finance: 0.1132
-  england: 0.1003
-  february: 0.0881
-  january: 0.0612
-  settlement: 0.0598
-  county: 0.0414
-  devon: 0.0353
-  copy: 0.0333
-  grant: 0.0333
+  treaty: 0.0942
+  europe: 0.0519
+  foreign: 0.0292
+  enlargement: 0.0244
+  british: 0.0195
+  lisbon: 0.0182
+  constitution: 0.0176
+  power: 0.0173
+  amsterdam: 0.0144
+  maastricht: 0.0142
 
 主题 26:
-  refugee: 0.1042
-  asylum: 0.0599
-  camp: 0.0412
-  child: 0.0401
-  seeker: 0.0382
-  humanitarian: 0.0311
-  sanctuary: 0.0283
-  family: 0.0275
-  syria: 0.0251
-  europe: 0.0226
+  lay: 0.1245
+  finance: 0.1214
+  england: 0.1074
+  february: 0.0918
+  settlement: 0.0623
+  january: 0.0617
+  county: 0.0400
+  grant: 0.0382
+  devon: 0.0378
+  copy: 0.0341
 
 主题 27:
-  nuclear: 0.1597
-  weapon: 0.0996
-  deterrent: 0.0865
-  submarine: 0.0689
-  trident: 0.0684
-  defence: 0.0486
-  nato: 0.0356
-  deterrence: 0.0350
-  continuous: 0.0315
-  disarmament: 0.0303
+  strike: 0.0490
+  employer: 0.0400
+  industrial: 0.0397
+  worker: 0.0357
+  dispute: 0.0306
+  ballot: 0.0243
+  firefighter: 0.0201
+  employee: 0.0200
+  workplace: 0.0192
+  labour: 0.0187
 
 主题 28:
-  oil: 0.0694
-  fuel: 0.0585
-  price: 0.0488
-  ved: 0.0365
-  vehicle: 0.0363
-  car: 0.0337
-  duty: 0.0323
-  gas: 0.0290
-  sea: 0.0265
-  rural: 0.0207
+  nuclear: 0.1650
+  weapon: 0.1028
+  deterrent: 0.0885
+  submarine: 0.0702
+  trident: 0.0697
+  defence: 0.0507
+  nato: 0.0365
+  deterrence: 0.0355
+  continuous: 0.0322
+  disarmament: 0.0309
 
 主题 29:
-  settlement: 0.0433
-  grant: 0.0288
-  county: 0.0283
-  finance: 0.0187
-  formula: 0.0183
-  ssa: 0.0176
-  cap: 0.0171
-  care: 0.0158
-  labour: 0.0157
-  rural: 0.0153
+  grant: 0.1357
+  lay: 0.1193
+  wale: 0.1094
+  england: 0.1044
+  january: 0.0747
+  crime: 0.0747
+  officer: 0.0655
+  february: 0.0623
+  midland: 0.0321
+  constable: 0.0266
 
 主题 30:
-  war: 0.0705
-  iraq: 0.0475
-  arm: 0.0430
-  chilcot: 0.0418
-  military: 0.0415
-  syria: 0.0374
-  intelligence: 0.0314
-  chemical: 0.0293
-  weapon: 0.0285
-  conflict: 0.0275
+  assembly: 0.1315
+  wale: 0.1085
+  welsh: 0.0953
+  power: 0.0451
+  devolution: 0.0275
+  devolve: 0.0219
+  transfer: 0.0184
+  legislative: 0.0181
+  function: 0.0168
+  primary: 0.0152
 
 主题 31:
-  woman: 0.1798
-  gender: 0.0541
-  men: 0.0481
-  equality: 0.0411
-  gap: 0.0408
-  womens: 0.0343
-  equal: 0.0327
-  pension: 0.0179
-  childcare: 0.0176
-  child: 0.0173
+  oil: 0.0778
+  fuel: 0.0651
+  price: 0.0547
+  vehicle: 0.0437
+  ved: 0.0435
+  car: 0.0400
+  duty: 0.0378
+  gas: 0.0321
+  sea: 0.0271
+  rural: 0.0244
 
 主题 32:
-  assembly: 0.1220
-  wale: 0.1018
-  welsh: 0.0919
-  power: 0.0406
-  devolution: 0.0258
-  devolve: 0.0210
-  transfer: 0.0174
-  legislative: 0.0168
-  function: 0.0164
-  primary: 0.0142
+  settlement: 0.0459
+  county: 0.0297
+  grant: 0.0292
+  finance: 0.0185
+  ssa: 0.0183
+  formula: 0.0182
+  rural: 0.0167
+  labour: 0.0164
+  cap: 0.0160
+  care: 0.0160
 
 主题 33:
-  prison: 0.0879
-  probation: 0.0706
-  sentence: 0.0500
-  offender: 0.0452
-  reoffending: 0.0313
-  justice: 0.0309
-  prisoner: 0.0247
-  crime: 0.0219
-  rehabilitation: 0.0218
-  offence: 0.0212
+  lottery: 0.1251
+  sport: 0.0997
+  olympic: 0.0592
+  game: 0.0489
+  olympics: 0.0454
+  adviser: 0.0307
+  london: 0.0306
+  sunday: 0.0286
+  participation: 0.0272
+  bid: 0.0240
 
 主题 34:
-  cell: 0.0782
-  abortion: 0.0753
-  embryo: 0.0737
-  research: 0.0664
-  human: 0.0494
-  stem: 0.0464
-  sibling: 0.0283
-  embryonic: 0.0283
-  ethical: 0.0266
-  woman: 0.0265
+  woman: 0.1841
+  gender: 0.0576
+  men: 0.0488
+  gap: 0.0439
+  equality: 0.0421
+  womens: 0.0360
+  equal: 0.0353
+  equalisation: 0.0185
+  child: 0.0176
+  earn: 0.0170
 
 主题 35:
-  strike: 0.0540
-  worker: 0.0377
-  employer: 0.0363
-  industrial: 0.0351
-  dispute: 0.0329
-  firefighter: 0.0222
-  picket: 0.0212
-  ballot: 0.0211
-  workplace: 0.0203
-  fbu: 0.0195
+  dear: 2.0022
+  itthey: 1.4031
+  presumably: 0.8371
+  man: 0.6250
+  certainly: 0.4700
+  : 0.0000
+  : 0.0000
+  : 0.0000
+  : 0.0000
+  : 0.0000
 
 主题 36:
-  religious: 0.0894
-  hatred: 0.0809
-  religion: 0.0666
-  muslim: 0.0426
-  belief: 0.0396
-  racial: 0.0368
-  offence: 0.0343
-  incitement: 0.0319
-  blasphemy: 0.0290
-  christian: 0.0284
+  crime: 0.0796
+  officer: 0.0730
+  constable: 0.0296
+  grant: 0.0254
+  neighbourhood: 0.0226
+  chief: 0.0225
+  settlement: 0.0216
+  precept: 0.0205
+  frontline: 0.0189
+  commissioner: 0.0174
 
 主题 37:
-  grant: 0.1480
-  lay: 0.1298
-  wale: 0.1174
-  england: 0.1107
-  january: 0.0857
-  officer: 0.0686
-  february: 0.0616
-  midland: 0.0385
-  crime: 0.0381
-  frontline: 0.0313
+  airport: 0.1645
+  heathrow: 0.1033
+  noise: 0.0806
+  flight: 0.0696
+  runway: 0.0579
+  apd: 0.0529
+  air: 0.0490
+  aviation: 0.0444
+  aircraft: 0.0426
+  passenger: 0.0398
 
 主题 38:
-  withdrawal: 0.2876
-  title: 0.1675
-  march: 0.1107
-  accordance: 0.1027
-  january: 0.0903
-  agreement: 0.0878
-  default: 0.0747
-  ratify: 0.0716
-  decline: 0.0547
-  friday: 0.0547
+  syria: 0.1348
+  isil: 0.1215
+  military: 0.0842
+  ally: 0.0667
+  daesh: 0.0619
+  airstrikes: 0.0562
+  peace: 0.0541
+  iraq: 0.0491
+  syrian: 0.0468
+  vienna: 0.0397
 
 主题 39:
-  disability: 0.0762
-  disable: 0.0705
-  employment: 0.0408
-  incapacity: 0.0284
-  health: 0.0280
-  assessment: 0.0278
-  allowance: 0.0267
-  condition: 0.0264
-  workrelated: 0.0253
-  carers: 0.0237
+  smoke: 0.1916
+  tobacco: 0.1046
+  cigarette: 0.0570
+  smuggle: 0.0391
+  club: 0.0377
+  health: 0.0368
+  advertise: 0.0368
+  smoker: 0.0319
+  pub: 0.0309
+  product: 0.0254
 
 主题 40:
-  immigration: 0.1063
-  windrush: 0.0743
-  ukba: 0.0393
-  generation: 0.0374
-  caribbean: 0.0367
-  deportation: 0.0337
-  border: 0.0334
-  migration: 0.0277
-  paper: 0.0267
-  official: 0.0253
+  immigration: 0.1132
+  windrush: 0.0792
+  generation: 0.0405
+  caribbean: 0.0390
+  deportation: 0.0363
+  paper: 0.0292
+  border: 0.0273
+  official: 0.0270
+  migration: 0.0263
+  commonwealth: 0.0247
 
 主题 41:
-  airport: 0.1606
-  heathrow: 0.1015
-  noise: 0.0788
-  flight: 0.0695
-  runway: 0.0568
-  apd: 0.0520
-  air: 0.0463
-  aviation: 0.0429
-  aircraft: 0.0417
-  passenger: 0.0374
+  meal: 0.0757
+  annul: 0.0615
+  universal: 0.0572
+  pray: 0.0497
+  humble: 0.0477
+  copy: 0.0439
+  childcare: 0.0341
+  lay: 0.0335
+  date: 0.0334
+  isas: 0.0333
 
 主题 42:
-  syria: 0.1304
-  isil: 0.1177
-  military: 0.0813
-  ally: 0.0648
-  daesh: 0.0604
-  airstrikes: 0.0549
-  peace: 0.0526
-  iraq: 0.0474
-  syrian: 0.0457
-  vienna: 0.0389
+  cell: 0.1067
+  embryo: 0.0994
+  research: 0.0898
+  human: 0.0646
+  stem: 0.0631
+  embryonic: 0.0382
+  sibling: 0.0375
+  scientist: 0.0353
+  ethical: 0.0344
+  disease: 0.0327
 
 主题 43:
-  mayor: 0.1256
-  london: 0.1130
-  borough: 0.0385
-  city: 0.0367
-  power: 0.0291
-  assembly: 0.0270
-  strategic: 0.0224
-  corporation: 0.0199
-  gla: 0.0183
-  development: 0.0183
+  iraq: 0.2369
+  isil: 0.1598
+  pose: 0.0757
+  request: 0.0719
+  military: 0.0681
+  territorial: 0.0657
+  iraqi: 0.0637
+  air: 0.0626
+  international: 0.0596
+  syria: 0.0582
 
 主题 44:
-  smoke: 0.1854
-  tobacco: 0.1017
-  cigarette: 0.0555
-  smuggle: 0.0380
-  club: 0.0363
-  advertise: 0.0358
-  health: 0.0346
-  smoker: 0.0311
-  pub: 0.0299
-  product: 0.0242
+  alcohol: 0.1015
+  pub: 0.0998
+  drink: 0.0842
+  beer: 0.0736
+  duty: 0.0582
+  whisky: 0.0393
+  license: 0.0363
+  brewery: 0.0354
+  premise: 0.0338
+  disorder: 0.0306
 
 主题 45:
-  crime: 0.0724
-  officer: 0.0697
-  constable: 0.0276
-  grant: 0.0269
-  settlement: 0.0221
-  precept: 0.0218
-  chief: 0.0211
-  neighbourhood: 0.0201
-  commissioner: 0.0173
-  frontline: 0.0169
+  yearolds: 0.1037
+  franchise: 0.0918
+  age: 0.0821
+  election: 0.0667
+  citizen: 0.0570
+  elector: 0.0422
+  electoral: 0.0397
+  commonwealth: 0.0342
+  citizenship: 0.0331
+  kingdom: 0.0268
 
 主题 46:
-  proceeding: 0.1078
-  programme: 0.1067
-  vary: 0.0633
-  consideration: 0.0602
-  column: 0.0593
-  omit: 0.0560
-  paragraph: 0.0551
-  program: 0.0479
-  table: 0.0478
-  commencement: 0.0424
+  bank: 0.1820
+  bonus: 0.0731
+  levy: 0.0467
+  banker: 0.0386
+  lend: 0.0375
+  financial: 0.0337
+  economy: 0.0201
+  remuneration: 0.0187
+  competition: 0.0180
+  taxpayer: 0.0159
 
 主题 47:
-  defence: 0.0828
-  regiment: 0.0715
-  battalion: 0.0678
-  covenant: 0.0577
-  arm: 0.0577
-  fusilier: 0.0411
-  army: 0.0405
-  military: 0.0384
-  capability: 0.0271
-  nato: 0.0245
-
-主题 48:
-  presumably: 2.4464
-  certainly: 1.3488
-  : 0.0000
-  : 0.0000
-  : 0.0000
-  : 0.0000
-  : 0.0000
-  : 0.0000
-  : 0.0000
-  : 0.0000
-
-主题 49:
-  post: 0.1885
-  mail: 0.1716
-  network: 0.0449
-  postal: 0.0407
-  mutuals: 0.0282
-  mutual: 0.0278
-  iba: 0.0250
-  privatisation: 0.0242
-  interbusiness: 0.0232
-  agreement: 0.0218
-
-主题 50:
-  bank: 0.1660
-  bonus: 0.0664
-  levy: 0.0425
-  banker: 0.0368
-  lend: 0.0346
-  financial: 0.0324
-  economy: 0.0180
-  remuneration: 0.0175
-  competition: 0.0163
-  taxpayer: 0.0148
-
-主题 51:
-  alcohol: 0.1010
-  pub: 0.0972
-  drink: 0.0818
-  beer: 0.0762
-  duty: 0.0591
-  whisky: 0.0394
-  brewery: 0.0370
-  premise: 0.0321
-  disorder: 0.0318
-  license: 0.0297
-
-主题 52:
-  yearolds: 0.0996
-  franchise: 0.0888
-  age: 0.0779
-  election: 0.0625
-  citizen: 0.0548
-  elector: 0.0418
-  electoral: 0.0381
-  commonwealth: 0.0333
-  citizenship: 0.0324
-  kingdom: 0.0256
-
-主题 53:
-  wage: 0.0889
-  minimum: 0.0796
-  employer: 0.0329
-  employment: 0.0280
-  unemployment: 0.0263
-  worker: 0.0234
-  labour: 0.0218
-  contract: 0.0218
-  zerohours: 0.0196
-  economy: 0.0174
-
-主题 54:
-  shop: 0.1657
-  sunday: 0.1105
-  town: 0.0991
-  street: 0.0972
-  centre: 0.0762
-  bet: 0.0565
-  payday: 0.0499
-  store: 0.0468
-  rat: 0.0443
-  retailer: 0.0410
+  shop: 0.1673
+  sunday: 0.1078
+  street: 0.1030
+  town: 0.1011
+  centre: 0.0804
+  bet: 0.0574
+  payday: 0.0506
+  rat: 0.0468
+  store: 0.0467
+  retailer: 0.0425
 

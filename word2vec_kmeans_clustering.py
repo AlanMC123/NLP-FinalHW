@@ -137,34 +137,19 @@ def get_cluster_keywords(texts, stop_words_list=None, top_n=5):
     except ValueError:
         return "N/A"
 
-def get_tfidf_weighted_vector(doc_tokens, w2v_model, idf_dict, vector_size):
+def get_average_vector(doc_tokens, w2v_model, vector_size):
     """
-    获取文档向量：计算 TF-IDF 加权平均值
+    获取文档向量：计算词向量的平均值
     """
-    valid_tokens = [word for word in doc_tokens if word in w2v_model.wv.key_to_index and word in idf_dict]
+    valid_tokens = [word for word in doc_tokens if word in w2v_model.wv.key_to_index]
     
     if not valid_tokens:
         return np.zeros(vector_size)
     
-    tf_counter = Counter(valid_tokens)
-    total_tokens = len(valid_tokens)
+    # 直接计算有效词向量的平均值
+    vec = np.mean([w2v_model.wv[word] for word in valid_tokens], axis=0)
     
-    weighted_sum = np.zeros(vector_size)
-    total_weight = 0.0
-    
-    for word, count in tf_counter.items():
-        vec = w2v_model.wv[word]
-        tf = count / total_tokens
-        idf = idf_dict[word]
-        weight = tf * idf
-        
-        weighted_sum += vec * weight
-        total_weight += weight
-        
-    if total_weight == 0:
-        return np.zeros(vector_size)
-        
-    return weighted_sum / total_weight
+    return vec
 
 def find_optimal_k_elbow(doc_vectors, max_k=15, save_dir='clustering_analysis_8'):
     """肘部法自动寻找最佳K"""
@@ -198,7 +183,7 @@ def find_optimal_k_elbow(doc_vectors, max_k=15, save_dir='clustering_analysis_8'
     plt.figure(figsize=(10, 6))
     plt.plot(K_range, wcss, 'bo-', label='WCSS (簇内平方和)')
     plt.plot(best_k, wcss[np.argmax(distances)], 'ro', markersize=12, label=f'最佳K值={best_k}')
-    plt.title('肘部法确定最佳聚类数 (Word2Vec + TFIDF)')
+    plt.title('肘部法确定最佳聚类数 (Word2Vec)')
     plt.xlabel('聚类数 (k)')
     plt.ylabel('WCSS (簇内平方和)')
     plt.legend()
@@ -278,27 +263,17 @@ def main(k):
         print("模型训练并保存完毕。")
 
     # ==========================================
-    # 4. 计算 TF-IDF 并生成加权向量
+    # 4. 生成文档向量 (直接计算词向量平均值)
     # ==========================================
-    print("\n★ 正在准备 TF-IDF 权重...")
+    print("\n★ 正在生成 Word2Vec 平均文档向量...")
     
     corpus_as_strings = [" ".join(doc) for doc in valid_docs]
-    
-    tfidf_vectorizer = TfidfVectorizer(min_df=2) 
-    tfidf_vectorizer.fit(corpus_as_strings)
-    
-    feature_names = tfidf_vectorizer.get_feature_names_out()
-    idf_values = tfidf_vectorizer.idf_
-    idf_dict = dict(zip(feature_names, idf_values))
-    
-    print(f"TF-IDF 词表大小: {len(idf_dict)}")
-    print("正在计算 TF-IDF 加权文档向量...")
     
     vector_size = model.vector_size
     doc_vectors = []
     
     for doc in tqdm(valid_docs, desc="Vectorizing"):
-        vec = get_tfidf_weighted_vector(doc, model, idf_dict, vector_size)
+        vec = get_average_vector(doc, model, vector_size)
         doc_vectors.append(vec)
         
     doc_vectors = np.array(doc_vectors)
@@ -365,8 +340,8 @@ def main(k):
                  ha='center', va='center', fontsize=11, weight='bold', 
                  bbox=dict(facecolor='white', alpha=0.8, boxstyle='round,pad=0.5'))
 
-    plt.title(f'Word2Vec (TF-IDF加权) 聚类可视化', fontsize=18)
-    save_filename = 'word2vec_lemmatized_tfidf_figure.png' if USE_LEMMATIZATION else 'word2vec_tfidf_figure.png'
+    plt.title(f'Word2Vec + K-Means 聚类可视化', fontsize=18)
+    save_filename = 'word2vec_lemmatized_figure.png' if USE_LEMMATIZATION else 'word2vec_figure.png'
     plt.savefig(os.path.join(save_dir, save_filename), dpi=300)
     
     # 将聚类结果保存为CSV文件
